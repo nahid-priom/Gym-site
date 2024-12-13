@@ -1,70 +1,58 @@
-import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-
+import React from "react";
 import HeroSection from "../components/HeroSection";
-import Navbar from "../components/Navbar";
-import RecentWorkSection from "../components/RecentWork";
-import ServiceSection from "../components/ServicesSection";
-import ClientTestimonials from "../components/ClientTestmonials";
-import Footer from "../components/Footer";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import CategorySection from '../components/CategorySection';
-import GoogleMap from "../components/GoogleMap"
-
+import GymDetails from "../components/GymDetails";
+import gym1 from "../assets/gym-image/Gym 3.png";
+import gym2 from "../assets/gym-image/Gym 5.png";
+import gym3 from "../assets/gym-image/image.png";
 
 const Home = () => {
-  const [seoData, setSeoData] = useState({
-    seo_title: "Phone Spot Repair - Home",
-    seo_description: "Welcome to the Phone Repair Center. We offer high-quality phone repair services for iPhones, Samsung, and other smartphones. Quick and reliable services." // Fallback description
-  });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchSEOData = async () => {
-      try {
-        const response = await fetch('https://phonespotbackend.blacktechcorp.com/api/seos');
-        if (!response.ok) {
-          throw new Error('Failed to fetch SEO data');
-        }
-        const data = await response.json();
-        setSeoData({
-          seo_title: data.homeSEO.seo_title,
-          seo_description: data.homeSEO.seo_description
-        });
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchSEOData();
-  }, []);
+  const gymData = [
+    {
+      name: "Fitcamp Senayan City Victory",
+      location: "Senayan, Jakarta Selatan",
+      image: gym1,
+    },
+    {
+      name: "Fitcamp Padang Winner",
+      location: "Kota Padang, Sumtra Barat",
+      image: gym2,
+    },
+    {
+      name: "Fitcamp Majapahit Solo",
+      location: "Solo, Jawa Tengah",
+      image: gym3,
+    },
+  ];
 
   return (
-    <div className="w-full">
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>{seoData.seo_title}</title>
-        <meta name="description" content={seoData.seo_description} />
-      </Helmet>
-
-      {/* Error handling (optional) */}
-      {loading && <p>Loading SEO data...</p>}
-      {error && <p>Error loading SEO data: {error}</p>}
-
-      {/* Page Content */}
-      <Navbar />
+    <div className=" bg-gray-50 h-full">
       <HeroSection />
-      
-      <CategorySection />
-      <ServiceSection />
-      <RecentWorkSection />
-      <ClientTestimonials />
-      <GoogleMap />
-      <Footer />
+      <div className="pt-44 pb-20 lg:pb-44 mt-[616px] lg:mt-0 px-4 lg:px-0 max-w-[1200px] mx-auto">
+        <div className="flex flex-col sm:flex-row gap-2 justify-between">
+          <div>
+            <h2 className="text-5xl font-normal mb-6 font-manrope text-gray-800">
+              Latest Added
+            </h2>
+            <p className="text-gray-600 mb-2 text-base font-inter mt-2">
+              New gyms from around the city with variety facilities available
+            </p>
+          </div>
+          <button className="text-base font-semibold text-white bg-black w-[105px] h-[43px] rounded-[24px] hover:underline">
+            See All
+          </button>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gymData.map((gym, index) => (
+            <GymDetails
+              key={index}
+              name={gym.name}
+              location={gym.location}
+              image={gym.image}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
