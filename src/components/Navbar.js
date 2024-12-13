@@ -54,7 +54,7 @@ const Navbar = () => {
           </Link>
 
           <div className="flex gap-[24px]">
-            <ul className="list-none font-inter sm:flex hidden justify-center items-center">
+            <ul className="list-none font-inter md:flex hidden justify-center items-center">
               {navLinks.map((nav, index) => (
                 <li
                   key={nav.id}
@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
 
           {/* Sidebar for mobile */}
-          <div className="sm:hidden flex justify-end items-center">
+          <div className="md:hidden flex justify-end items-center">
             <FontAwesomeIcon
               icon={toggle ? faTimes : faBars}
               className="w-[28px] h-[28px] pr-4 text-black cursor-pointer"

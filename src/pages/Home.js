@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div className=" bg-gray-50 h-full">
       <HeroSection />
-      <div className="pt-44 pb-20 lg:pb-44 mt-[616px] lg:mt-0 px-4 lg:px-0 max-w-[1200px] mx-auto">
+      <div className="pt-44 pb-20 lg:pb-44 mt-[495px] sm:mt-[80px] lg:mt-0 px-4 lg:px-0 max-w-[1200px] mx-auto">
         <div className="flex flex-col sm:flex-row gap-2 justify-between">
           <div>
             <h2 className="text-5xl font-normal mb-6 font-manrope text-gray-800">

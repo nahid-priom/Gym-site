@@ -12,7 +12,7 @@ import membership from "../assets/Membership.png";
 const HeroSection = () => {
   return (
     <section
-      className="relative max-w-[1440px] h-[720px] lg:h-[1044px] mx-auto bg-cover bg-center flex items-center justify-center"
+      className="relative w-full sm:w-[104%] lg:max-w-[1440px] h-[720px] lg:h-[1044px] mx-auto bg-cover bg-center flex items-center justify-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Navbar className="absolute bg-transparent w-full" />
@@ -67,56 +67,56 @@ const HeroSection = () => {
               Search
             </button>
           </div>
-          {/* New Cards Section */}
-          <div className="flex flex-col shadow-xl rounded-[4px]  md:flex-row max-w-[1200px] absolute top-[518px] lg:top-[701px] p-8 gap-[64px] bg-white justify-center mx-auto">
-            {/* New Section */}
-            <div className="flex flex-col w-[330px] h-[217px] items-center justify-center text-black">
-              {/* Image */}
+          {/*  Cards Section */}
+          <div className="flex flex-col shadow-xl rounded-[4px]  sm:flex-row lg:w-[1200px] sm:w-[768px]  absolute top-[518px] lg:top-[701px] p-8  xl:gap-[50px] bg-white justify-center mx-auto">
+            
+            <div className="flex flex-col px-8 w-[330px] h-[217px] items-center justify-center text-black">
+              
               <img
                 src={location}
                 alt="Location Icon"
                 className="w-[76px] h-[76px] rounded-full mb-4"
               />
-              {/* Title */}
+             
               <h3 className="text-xl font-semibold mb-2">
                 Find Nearby Location
               </h3>
-              {/* Paragraph */}
-              <p className="text-xl font-normal text-center">
+             
+              <p className="text-xl sm:text-base font-normal text-center">
                 Find the nearby gym that near your location to transform your
                 healthy journey
               </p>
             </div>
 
-            {/* New Section */}
-            <div className="flex flex-col w-[330px] h-[217px] items-center justify-center text-black">
-              {/* Image */}
+          
+            <div className="flex flex-col px-8 w-[330px] h-[217px] items-center justify-center text-black">
+             
               <img
                 src={membership}
                 alt="Membership"
                 className="w-[76px] h-[76px] rounded-full mb-4"
               />
-              {/* Title */}
+             
               <h3 className="text-xl font-semibold mb-2">Become Membership</h3>
-              {/* Paragraph */}
-              <p className="text-xl font-normal text-center">
+             
+              <p className="text-lg sm:text-base font-normal text-center">
                 Access to all FitCamp gyms and become part of our exclusive
                 healthy community.
               </p>
             </div>
 
-            {/* New Section */}
-            <div className="flex flex-col w-[330px] h-[217px] items-center justify-center text-black">
-              {/* Image */}
+          
+            <div className="flex flex-col px-8 w-[330px] h-[217px] items-center justify-center text-black">
+             
               <img
                 src={maintain}
                 alt="Maintain"
                 className="w-[76px] h-[76px] rounded-full mb-4"
               />
-              {/* Title */}
+             
               <h3 className="text-xl font-semibold mb-2">Maintain The Body</h3>
-              {/* Paragraph */}
-              <p className="text-xl font-normal text-center">
+             
+              <p className="text-xl sm:text-base font-normal text-center">
                 Ensure long-term wellness with effective healthy body
                 maintenance strategies.
               </p>
