@@ -22,7 +22,7 @@ const GymDetails = ({ name, location, image }) => {
 
   return (
     <div 
-      className="w-full lg:w-[380px] sm:w-[460px] h-[670px] bg-white shadow-md rounded-lg p-6 flex flex-col justify-between"
+      className="w-full lg:w-[380px] sm:max-w-[460px] h-[670px] bg-white shadow-md rounded-lg p-6 flex flex-col justify-between"
     >
       {/* Title and Location */}
       <div>

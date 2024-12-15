@@ -48,7 +48,7 @@ const Navbar = () => {
           navbarShadow ? "bg-white shadow-lg top-0" : "bg-transparent top-2 lg:top-6"
         }`}
       >
-        <div className="max-w-[1200px] px-4 lg:px-0 mx-auto flex py-3 justify-between items-center">
+        <div className="max-w-[1200px] px-4 sm:px-8 lg:px-0 mx-auto flex py-3 justify-between items-center">
           <Link to={"/"}>
             <img src={logo} alt="Logo" className="lg:w-[141px] lg:h-[44px] w-[130px] h-[38px]" />
           </Link>
